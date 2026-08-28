@@ -1,3 +1,3 @@
 # laravel-blind
 
-Um start-kit para o Laravel.
+Um start-kit para o Laravel.'
