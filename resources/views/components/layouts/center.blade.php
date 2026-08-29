@@ -22,7 +22,7 @@
                 <h1 class="text-xl font-semibold tracking-tight text-gray-900">{{ config('app.name') }}</h1>
             </div>
 
-            {{-- @if ($errors->any())
+            @if ($errors->any())
                 <div class="mb-4 flex items-start gap-3 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
                     <ul class="flex flex-col gap-0.5">
                         @foreach ($errors->all() as $error)
@@ -30,7 +30,7 @@
                         @endforeach
                     </ul>
                 </div>
-            @endif --}}
+            @endif
 
             <div class="rounded-2xl bg-white p-8 shadow-sm ring-1 ring-gray-200">
                 {{ $slot }}

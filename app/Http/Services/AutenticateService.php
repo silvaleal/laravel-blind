@@ -21,7 +21,12 @@ class AutenticateService
             "email" => $data['email']
         ])->first();
 
-        if (!$account || Hash::check($data['password'], $account->password)) {
+        if (!$account) {
+            throw new Exception(__("auth.failed"));
+        }
+
+
+        if (!Hash::check($data['password'], $account->password)) {
             throw new Exception(__("auth.failed"));
         }
 
@@ -52,10 +57,7 @@ class AutenticateService
     # Método para salvar a sessão
     public function attempt(User $account)
     {
-        return Auth::attempt([
-            "email" => $account->email,
-            "password" => $account->password,
-        ]);
+        return Auth::login($account);
     }
 
 }
