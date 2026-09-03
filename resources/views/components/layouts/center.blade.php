@@ -12,31 +12,23 @@
 
 </head>
 
-<body class="bg-gray-50">
+<body class="bg-black text-white">
 
     <div class="flex min-h-screen flex-col items-center justify-center px-4 py-12">
 
         <div class="w-full max-w-md">
 
             <div class="mb-8 text-center">
-                <h1 class="text-xl font-semibold tracking-tight text-gray-900">{{ config('app.name') }}</h1>
+                <a href="{{ route('home') }}" class="text-2xl font-light tracking-tight hover:text-white/80 transition">
+                    {{ config('app.name') }}
+                </a>
             </div>
 
-            @if ($errors->any())
-                <div class="mb-4 flex items-start gap-3 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
-                    <ul class="flex flex-col gap-0.5">
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
-
-            <div class="rounded-2xl bg-white p-8 shadow-sm ring-1 ring-gray-200">
+            <div class="rounded-2xl bg-white/5 p-8 ring-1 ring-white/10">
                 {{ $slot }}
             </div>
 
-            <p class="mt-8 text-center text-xs text-gray-400">&copy; {{ date('Y') }} {{ config('app.name') }}. Todos os direitos reservados.</p>
+            <p class="mt-8 text-center text-xs text-white/30">&copy; {{ date('Y') }} {{ config('app.name') }}. Todos os direitos reservados.</p>
 
         </div>
 

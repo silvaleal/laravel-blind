@@ -6,6 +6,7 @@ use App\Models\User;
 use Auth;
 use Exception;
 use Hash;
+use Illuminate\Http\Request;
 
 class AutenticateService
 {
@@ -46,12 +47,20 @@ class AutenticateService
         }
 
         $user = $this->userModel->create([
-            "email"=>$data['email'],
-            "name"=>$data['name'],
-            "password"=>Hash::make($data['password']),
+            "email" => $data['email'],
+            "name" => $data['name'],
+            "password" => Hash::make($data['password']),
         ]);
 
         return $this->attempt($user);
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return to_route("user.login");
     }
 
     # Método para salvar a sessão

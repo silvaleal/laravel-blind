@@ -1,8 +1,8 @@
 <x-layouts.center>
     <div>
         <div class="mb-6 text-center">
-            <h2 class="text-lg font-semibold text-gray-900">Crie sua conta</h2>
-            <p class="mt-1 text-sm text-gray-500">Preencha os dados abaixo para começar.</p>
+            <h2 class="text-xl font-light tracking-tight text-white">Crie sua conta</h2>
+            <p class="mt-1 text-sm text-white/40">Preencha os dados abaixo para começar.</p>
         </div>
 
         <form action="{{ route('user.register.store') }}" method="post" class="flex flex-col gap-4">
@@ -49,9 +49,9 @@
             </x-ui.button>
         </form>
 
-        <p class="mt-6 text-center text-sm text-gray-500">
+        <p class="mt-6 text-center text-sm text-white/40">
             Já possui uma conta?
-            <a class="font-medium text-blue-600 hover:text-blue-700 hover:underline" href="{{ route('user.login') }}">
+            <a class="font-medium text-white underline decoration-white/30 underline-offset-4 hover:text-white/80" href="{{ route('user.login') }}">
                 Acessar conta
             </a>
         </p>

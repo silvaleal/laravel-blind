@@ -5,10 +5,10 @@
 
 @php
     $variants = [
-        'default' => 'bg-gray-900 text-white hover:bg-gray-800 focus-visible:outline-gray-900',
-        'primary' => 'bg-blue-600 text-white hover:bg-blue-700 focus-visible:outline-blue-600',
-        'secondary' => 'bg-white text-gray-700 ring-1 ring-gray-300 hover:bg-gray-50',
-        'danger' => 'bg-red-600 text-white hover:bg-red-700 focus-visible:outline-red-600',
+        'default' => 'bg-white text-black hover:bg-white/80 focus-visible:outline-white',
+        'primary' => 'bg-blue-500 text-white hover:bg-blue-400 focus-visible:outline-blue-500',
+        'secondary' => 'bg-transparent text-white ring-1 ring-white/20 hover:bg-white/10',
+        'danger' => 'bg-red-600 text-white hover:bg-red-500 focus-visible:outline-red-600',
     ];
 
     $variantClass = $variants[$variant] ?? $variants['default'];
