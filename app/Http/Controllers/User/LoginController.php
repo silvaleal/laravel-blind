@@ -4,7 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AutenticateRequest;
-use App\Http\Services\AutenticateService;
+use App\Services\AutenticateService;
 use Exception;
 use Illuminate\Http\Request;
 
