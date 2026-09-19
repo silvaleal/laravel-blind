@@ -12,8 +12,7 @@
             </h1>
 
             <p class="mt-6 max-w-md text-white/50 text-sm leading-relaxed">
-                Abra, acompanhe e resolva chamados em um só lugar.
-                Um fluxo simples, direto e sem ruído para o seu time.
+                Um STARTER KIT para o Laravel.
             </p>
 
             <div class="mt-8 flex items-center gap-4 text-sm">
