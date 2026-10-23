@@ -10,6 +10,8 @@ return [
     |
     */
 
-    'users_verified' => false # Se os usuários precisam verificar email para ter acesso.
-    
+    'verify_email_on_login' => false, // Exige email verificado para acessar.
+    'verify_password_change' => false, // Exige código para recuperar a senha.
+    'verify_email_change' => false, // Exige verificação ao alterar o email.
+
 ];
