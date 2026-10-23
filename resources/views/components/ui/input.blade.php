@@ -4,6 +4,7 @@
     'variant' => 'default',
     'name' => "default-input-name",
     'type' => 'text',
+    'value' => null,
 ])
 
 @php
@@ -33,7 +34,7 @@
         placeholder="{{ $placeholder ?? '' }}"
         type="{{ $type }}"
         name="{{ $name }}"
-        value="{{ old($name) }}"
+        value="{{ old($name, $value) }}"
     >
     @error($name)
         <p class="text-xs text-red-400">{{ $message }}</p>

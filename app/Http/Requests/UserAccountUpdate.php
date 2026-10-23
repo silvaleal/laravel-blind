@@ -5,14 +5,14 @@ namespace App\Http\Requests;
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 
-class LogoutRequest extends FormRequest
+class UserAccountUpdate extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,7 +23,8 @@ class LogoutRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            "name"=>['required'],
+            "email"=>['required', 'email']
         ];
     }
 }
