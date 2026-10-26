@@ -18,9 +18,13 @@ class hasAdmin
     {
         $user = Auth::user();
 
-        if ($user->role != 'admin') {
-            return to_route("user.index");
-        } 
+        if (! $user) {
+            return to_route('user.login');
+        }
+
+        if ($user->role !== 'admin') {
+            return to_route('user.index');
+        }
 
         return $next($request);
     }

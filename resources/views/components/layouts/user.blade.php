@@ -4,12 +4,17 @@
         <div x-show="open" @click="open = false" class="fixed inset-0 z-20 bg-black/50 lg:hidden" x-transition>
         </div>
 
+        @php
+            $routes = [
+                ['title' => "Início", 'href' => route('user.index')],
+                ['title' => 'Segurança', 'href' => route('user.security')],
+            ];
+
+        @endphp
+
         <x-partials.sidebar 
-            title="User" 
-            :routes="[
-                ['title' => 'Início', 'href' => route('user.index')],
-                ['title' => 'Segurança', 'href' => route('user.security')]
-            ]"
+            :title="__('User')" 
+            :routes="$routes"
         />
 
         <main class="lg:ml-64">

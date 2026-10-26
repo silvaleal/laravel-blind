@@ -4,7 +4,10 @@
         <div x-show="open" @click="open = false" class="fixed inset-0 z-20 bg-black/50 lg:hidden" x-transition>
         </div>
 
-        <x-partials.sidebar title="Admin" :routes="[['title' => 'Início', 'href' => route('admin.index')]]"/>
+        <x-partials.sidebar title="Admin" :routes="[
+            ['title' => 'Início', 'href' => route('admin.index')],
+            ['title' => 'Usuários', 'href' => route('admin.users.index')],
+        ]"/>
 
         <main class="lg:ml-64">
 
