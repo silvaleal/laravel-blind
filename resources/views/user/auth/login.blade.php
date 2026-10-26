@@ -5,35 +5,39 @@
             <p class="mt-1 text-sm text-white/40">Entre com suas credenciais para continuar.</p>
         </div>
 
+        @if (session('success'))
+            <div class="mb-4 rounded-lg border border-emerald-400/20 bg-emerald-400/10 p-3 text-sm text-emerald-100/90">
+                {{ session('success') }}
+            </div>
+        @endif
+
         <form action="{{ route('user.login.store') }}" method="post" class="flex flex-col gap-4">
             @csrf
 
-            <x-ui.input
-                type="email"
-                name="email"
-                title="Email"
-                placeholder="voce@exemplo.com"
-                required
-            />
+            <x-ui.input type="email" name="email" title="Email" placeholder="voce@exemplo.com" required />
 
-            <x-ui.input
-                type="password"
-                name="password"
-                title="Senha"
-                placeholder="••••••••"
-                required
-            />
+            <x-ui.input type="password" name="password" title="Senha" placeholder="••••••••" required />
 
             <x-ui.button class="mt-2">
                 Entrar
             </x-ui.button>
         </form>
 
-        <p class="mt-6 text-center text-sm text-white/40">
-            Ainda não tem conta?
-            <a class="font-medium text-white underline decoration-white/30 underline-offset-4 hover:text-white/80" href="{{ route('user.register') }}">
-                Criar conta
-            </a>
-        </p>
+        <div class="flex gap-2">
+            <p class="mt-6 text-center text-sm text-white/40">
+                Ainda não tem conta?
+                <a class="font-medium text-white underline decoration-white/30 underline-offset-4 hover:text-white/80"
+                    href="{{ route('user.register') }}">
+                    Criar conta
+                </a>
+            </p>
+            <p class="mt-6 text-center text-sm text-white/40">
+                Esqueceu sua senha?
+                <a class="font-medium text-white underline decoration-white/30 underline-offset-4 hover:text-white/80"
+                    href="{{ route('user.auth.recover-password') }}">
+                    Recuperar senha
+                </a>
+            </p>
+        </div>
     </div>
 </x-layouts.center>
